@@ -1,0 +1,1 @@
+var Ajax;Ajax&&null!=Ajax&&Ajax.Responders.register({onCreate:function(){$("spinner")&&Ajax.activeRequestCount>0&&Effect.Appear("spinner",{duration:.5,queue:"end"})},onComplete:function(){$("spinner")&&0==Ajax.activeRequestCount&&Effect.Fade("spinner",{duration:.5,queue:"end"})}});

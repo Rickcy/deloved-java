@@ -1,0 +1,21 @@
+<plugin name='deloved-front' version='0.1' grailsVersion='2.4 &gt; *'>
+  <author>Shertsinger Andrey</author>
+  <authorEmail>andrey@shertsinger.ru</authorEmail>
+  <title>Deloved Front Plugin</title>
+  <description>Brief summary/description of the plugin.
+</description>
+  <documentation>http://grails.org/plugin/deloved-front</documentation>
+  <type>DelovedFrontGrailsPlugin</type>
+  <resources>
+    <resource>FrontUrlMappings</resource>
+    <resource>ru.deloved.front.ArticleController</resource>
+    <resource>ru.deloved.front.CompaniesController</resource>
+    <resource>ru.deloved.front.CompanyController</resource>
+    <resource>ru.deloved.front.FilesController</resource>
+    <resource>ru.deloved.front.FrontController</resource>
+    <resource>ru.deloved.front.GoodsController</resource>
+    <resource>ru.deloved.front.ItemsController</resource>
+    <resource>ru.deloved.front.ServicesController</resource>
+    <resource>ru.deloved.front.SignupController</resource>
+  </resources>
+</plugin>

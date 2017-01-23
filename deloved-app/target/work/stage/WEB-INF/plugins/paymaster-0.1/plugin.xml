@@ -1,0 +1,13 @@
+<plugin name='paymaster' version='0.1' grailsVersion='2.4 &gt; *'>
+  <author>Yushkov Artem</author>
+  <authorEmail>iartwolf@gmail.com</authorEmail>
+  <title>Paymaster Plugin</title>
+  <description>Brief summary/description of the plugin.
+</description>
+  <documentation>http://grails.org/plugin/paymaster</documentation>
+  <type>PaymasterGrailsPlugin</type>
+  <resources>
+    <resource>paymaster.PaymasterController</resource>
+    <resource>paymaster.PaymasterService</resource>
+  </resources>
+</plugin>

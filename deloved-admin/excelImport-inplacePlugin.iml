@@ -19,8 +19,8 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$/../../out/production/excelImport-inplacePlugin" />
-    <output-test url="file://$MODULE_DIR$/../../out/test/excelImport-inplacePlugin" />
+    <output url="file://C:/out/production/excelImport-inplacePlugin" />
+    <output-test url="file://C:/out/test/excelImport-inplacePlugin" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../excel-import">
       <sourceFolder url="file://$MODULE_DIR$/../excel-import/src/groovy" isTestSource="false" />
@@ -28,7 +28,9 @@
     </content>
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="grails-2.4.4" level="application" />
+    <orderEntry type="module" module-name="deloved-app" />
+    <orderEntry type="module" module-name="deloved-app-grailsPlugins" />
+    <orderEntry type="library" scope="PROVIDED" name="grails-2.4.4" level="application" />
     <orderEntry type="module-library">
       <library name="Grails User Library (excelImport-inplacePlugin)">
         <CLASSES>
@@ -113,7 +115,5 @@
         <jarDirectory url="file://$MODULE_DIR$/../excel-import/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="deloved-app" />
-    <orderEntry type="module" module-name="deloved-app-grailsPlugins" />
   </component>
 </module>

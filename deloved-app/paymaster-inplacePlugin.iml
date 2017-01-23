@@ -30,8 +30,8 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$/../../out/production/paymaster-inplacePlugin" />
-    <output-test url="file://$MODULE_DIR$/../../out/test/paymaster-inplacePlugin" />
+    <output url="file://C:/out/production/paymaster-inplacePlugin" />
+    <output-test url="file://C:/out/test/paymaster-inplacePlugin" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../paymaster">
       <sourceFolder url="file://$MODULE_DIR$/../paymaster/test/unit" isTestSource="true" />
@@ -126,6 +126,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="deloved-app" />
+    <orderEntry type="module" module-name="deloved-app-grailsPlugins" />
     <orderEntry type="library" scope="PROVIDED" name="grails-2.4.4" level="application" />
     <orderEntry type="module-library">
       <library name="Grails User Library (paymaster-inplacePlugin)">
@@ -209,7 +211,5 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="deloved-app" />
-    <orderEntry type="module" module-name="deloved-app-grailsPlugins" />
   </component>
 </module>

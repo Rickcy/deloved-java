@@ -1,0 +1,41 @@
+<plugin name='deloved-admin' version='0.1' grailsVersion='2.4 &gt; *'>
+  <author>Shertsinger Andrey</author>
+  <authorEmail>andrey@shertsinger.ru</authorEmail>
+  <title>Deloved Admin Plugin</title>
+  <description>Brief summary/description of the plugin.
+</description>
+  <documentation>http://grails.org/plugin/deloved-admin</documentation>
+  <type>DelovedAdminGrailsPlugin</type>
+  <resources>
+    <resource>ActivityFilters</resource>
+    <resource>AdminUrlMappings</resource>
+    <resource>ChargeFilters</resource>
+    <resource>ru.deloved.admin.AccountController</resource>
+    <resource>ru.deloved.admin.AdcontentController</resource>
+    <resource>ru.deloved.admin.AdminToolController</resource>
+    <resource>ru.deloved.admin.BillingController</resource>
+    <resource>ru.deloved.admin.CategoryController</resource>
+    <resource>ru.deloved.admin.ClaimController</resource>
+    <resource>ru.deloved.admin.ConsultController</resource>
+    <resource>ru.deloved.admin.ContentController</resource>
+    <resource>ru.deloved.admin.DealController</resource>
+    <resource>ru.deloved.admin.DisputeController</resource>
+    <resource>ru.deloved.admin.DocumentController</resource>
+    <resource>ru.deloved.admin.ItemController</resource>
+    <resource>ru.deloved.admin.JuristConsultController</resource>
+    <resource>ru.deloved.admin.MeasureController</resource>
+    <resource>ru.deloved.admin.OrgController</resource>
+    <resource>ru.deloved.admin.PanelController</resource>
+    <resource>ru.deloved.admin.PaymentRequestController</resource>
+    <resource>ru.deloved.admin.ProfileController</resource>
+    <resource>ru.deloved.admin.RecoverController</resource>
+    <resource>ru.deloved.admin.RegionController</resource>
+    <resource>ru.deloved.admin.ReviewController</resource>
+    <resource>ru.deloved.admin.SuggestionCategoriesController</resource>
+    <resource>ru.deloved.admin.SuggestionController</resource>
+    <resource>ru.deloved.admin.SystemCurrencyController</resource>
+    <resource>ru.deloved.admin.TariffPriceController</resource>
+    <resource>ru.deloved.admin.TicketController</resource>
+    <resource>ru.deloved.admin.UserController</resource>
+  </resources>
+</plugin>

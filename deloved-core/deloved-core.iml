@@ -36,8 +36,8 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$/../../out/production/deloved-core" />
-    <output-test url="file://$MODULE_DIR$/../../out/test/deloved-core" />
+    <output url="file://C:/out/production/deloved-core" />
+    <output-test url="file://C:/out/test/deloved-core" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
@@ -47,14 +47,13 @@
       <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
     </content>
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="grails-2.4.4" level="application" />
+    <orderEntry type="module" module-name="deloved-app" exported="" />
+    <orderEntry type="module" module-name="deloved-app-grailsPlugins" />
+    <orderEntry type="library" scope="PROVIDED" name="grails-2.4.4" level="application" />
     <orderEntry type="module-library">
       <library name="Grails User Library (deloved-core)">
         <CLASSES>
@@ -139,7 +138,5 @@
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="deloved-app" exported="" />
-    <orderEntry type="module" module-name="deloved-app-grailsPlugins" />
   </component>
 </module>
