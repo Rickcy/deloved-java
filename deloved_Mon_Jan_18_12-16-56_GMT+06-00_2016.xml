@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="deloved" default="all">
+  
+  
+  <property file="deloved.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value="-Xlint:deprecation"/>
+  <property name="compiler.max.memory" value="1000m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.7_(1)" value="${jdk.home.1.7_(1)}/bin"/>
+  <path id="jdk.classpath.1.7_(1)">
+    <fileset dir="${jdk.home.1.7_(1)}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/access-bridge.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxrt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.7_(1)}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.7_(1)}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.7_(1)"/>
+  
+  
+  <!-- Global Libraries -->
+  
+  <path id="library.angular.js.classpath">
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/Jcrop/jquery.Jcrop.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular-animate.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular-aria.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular-cookies.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular-loader.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular-message-format.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular-messages.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular-resource.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular-route.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular-sanitize.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular-touch.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/angularjs/angular.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/bxslider/jquery.bxslider.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/dropzonejs/dropzone.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/gallery/blueimp-gallery.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/gallery/jquery.blueimp-gallery.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/jquery-ui/jquery-ui.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/jstree/jstree.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/select2/select2.min.js"/>
+    <pathelement location="C:/Users/User11/Documents/workspace-ggts-3.6.4.RELEASE/deloved-app/grails-app/assets/javascripts/tmpl/tmpl.min.js"/>
+  </path>
+  
+  <path id="library.grails-2.4.4.classpath">
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-aether-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-async-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-bootstrap-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-core-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-databinding-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-docs-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-encoder-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-logging-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-async-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-codecs-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-controllers-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-converters-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-databinding-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-datasource-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-domain-class-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-filters-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-gsp-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-i18n-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-log4j-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-mimetypes-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-rest-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-services-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-servlets-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-testing-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-url-mappings-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-plugin-validation-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-project-api-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-resources-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-scripts-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-spring-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-test-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-validation-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-common-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-databinding-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-databinding-spring-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-fileupload-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-gsp-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-gsp-taglib-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-jsp-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-mvc-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-sitemesh-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-web-url-mappings-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-wrapper-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/dist/grails-wrapper-support-2.4.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/aopalliance/aopalliance/jars/aopalliance-1.0.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/asm/asm/jars/asm-3.3.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/bouncycastle/bcmail-jdk14/jars/bcmail-jdk14-138.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/bouncycastle/bcprov-jdk14/jars/bcprov-jdk14-138.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/cglib/cglib/jars/cglib-2.2.2.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/com.google.code.findbugs/jsr305/jars/jsr305-1.3.9.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/com.google.code.gson/gson/jars/gson-2.2.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/com.google.guava/guava/jars/guava-10.0.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/com.google.protobuf/protobuf-java/jars/protobuf-java-2.5.0.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/jars/concurrentlinkedhashmap-lru-1.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/com.googlecode.json-simple/json-simple/jars/json-simple-1.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/com.h2database/h2/jars/h2-1.3.176.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/com.lowagie/itext/jars/itext-2.0.8.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/commons-cli/commons-cli/jars/commons-cli-1.2.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/commons-codec/commons-codec/jars/commons-codec-1.6.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/commons-collections/commons-collections/jars/commons-collections-3.2.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/commons-fileupload/commons-fileupload/jars/commons-fileupload-1.3.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/commons-io/commons-io/jars/commons-io-2.2.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/commons-lang/commons-lang/jars/commons-lang-2.6.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/commons-validator/commons-validator/jars/commons-validator-1.4.0.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/hsqldb/hsqldb/jars/hsqldb-1.8.0.10.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/javax.annotation/jsr250-api/jars/jsr250-api-1.0.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/javax.enterprise/cdi-api/jars/cdi-api-1.0.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/javax.inject/javax.inject/jars/javax.inject-1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/javax.servlet.jsp/jsp-api/jars/jsp-api-2.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/javax.servlet/javax.servlet-api/jars/javax.servlet-api-3.0.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/javax.servlet/jsp-api/jars/jsp-api-2.0.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/javax.transaction/jta/jars/jta-1.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/jline/jline/jars/jline-2.12.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/junit/junit/jars/junit-4.11.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/log4j/log4j/jars/log4j-1.2.17.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/net.java.dev.jna/jna/jars/jna-4.0.0.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/opensymphony/sitemesh/jars/sitemesh-2.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.ant/ant-junit/jars/ant-junit-1.8.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.ant/ant-launcher/jars/ant-launcher-1.8.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.ant/ant-trax/jars/ant-trax-1.7.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.ant/ant/jars/ant-1.8.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.httpcomponents/httpclient/jars/httpclient-4.2.6.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.httpcomponents/httpcore/jars/httpcore-4.2.5.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.ivy/ivy/jars/ivy-2.3.0.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.maven/maven-aether-provider/jars/maven-aether-provider-3.2.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.maven/maven-model-builder/jars/maven-model-builder-3.2.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.maven/maven-model/jars/maven-model-3.2.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.maven/maven-repository-metadata/jars/maven-repository-metadata-3.2.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.maven/maven-settings-builder/jars/maven-settings-builder-3.2.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.maven/maven-settings/jars/maven-settings-3.2.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.tomcat.embed/tomcat-embed-logging-log4j/jars/tomcat-embed-logging-log4j-7.0.50.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.tomcat/tomcat-jdbc/jars/tomcat-jdbc-7.0.50.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.apache.tomcat/tomcat-juli/jars/tomcat-juli-7.0.50.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.aspectj/aspectjrt/jars/aspectjrt-1.8.2.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.aspectj/aspectjweaver/jars/aspectjweaver-1.8.2.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.bouncycastle/bcpg-jdk15/jars/bcpg-jdk15-1.45.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.bouncycastle/bcprov-jdk15/jars/bcprov-jdk15-1.45.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.codehaus.gant/gant_groovy1.8/jars/gant_groovy1.8-1.9.6.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.codehaus.gpars/gpars/jars/gpars-1.2.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.codehaus.groovy/groovy-all/jars/groovy-all-2.3.7.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.codehaus.jsr166-mirror/jsr166y/jars/jsr166y-1.7.0.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.codehaus.plexus/plexus-classworlds/jars/plexus-classworlds-2.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.codehaus.plexus/plexus-component-annotations/jars/plexus-component-annotations-1.5.5.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.codehaus.plexus/plexus-interpolation/jars/plexus-interpolation-1.19.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.codehaus.plexus/plexus-utils/jars/plexus-utils-3.0.17.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.eclipse.aether/aether-api/jars/aether-api-1.0.0.v20140518.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.eclipse.aether/aether-connector-basic/jars/aether-connector-basic-1.0.0.v20140518.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.eclipse.aether/aether-connector-file/jars/aether-connector-file-0.9.0.M2.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.eclipse.aether/aether-impl/jars/aether-impl-1.0.0.v20140518.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.eclipse.aether/aether-spi/jars/aether-spi-1.0.0.v20140518.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.eclipse.aether/aether-transport-file/jars/aether-transport-file-1.0.0.v20140518.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.eclipse.aether/aether-transport-http/jars/aether-transport-http-1.0.0.v20140518.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.eclipse.aether/aether-util/jars/aether-util-1.0.0.v20140518.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.eclipse.sisu/org.eclipse.sisu.inject/jars/org.eclipse.sisu.inject-0.0.0.M5.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.eclipse.sisu/org.eclipse.sisu.plexus/jars/org.eclipse.sisu.plexus-0.0.0.M5.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.fusesource.jansi/jansi/jars/jansi-1.11.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.grails/grails-datastore-core/jars/grails-datastore-core-3.1.3.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.grails/grails-datastore-gorm/jars/grails-datastore-gorm-3.1.3.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.grails/grails-datastore-simple/jars/grails-datastore-simple-3.1.3.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.grails/grails-gdoc-engine/jars/grails-gdoc-engine-1.0.1.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.hibernate.javax.persistence/hibernate-jpa-2.1-api/jars/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.jsoup/jsoup/jars/jsoup-1.7.3.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.objenesis/objenesis/jars/objenesis-1.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.5.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.5.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.slf4j/slf4j-api/jars/slf4j-api-1.7.5.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.slf4j/slf4j-simple/jars/slf4j-simple-1.7.5.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.sonatype.plexus/plexus-cipher/jars/plexus-cipher-1.4.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.sonatype.plexus/plexus-sec-dispatcher/jars/plexus-sec-dispatcher-1.3.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.sonatype.sisu/sisu-guice/jars/sisu-guice-3.1.0-no_aop.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.spockframework/spock-core/jars/spock-core-0.7-groovy-2.0.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework.uaa/org.springframework.uaa.client/jars/org.springframework.uaa.client-1.0.1.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-aop/jars/spring-aop-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-aspects/jars/spring-aspects-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-beans/jars/spring-beans-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-context-support/jars/spring-context-support-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-context/jars/spring-context-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-core/jars/spring-core-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-expression/jars/spring-expression-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-jdbc/jars/spring-jdbc-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-test/jars/spring-test-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-tx/jars/spring-tx-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-web/jars/spring-web-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/spring-webmvc/jars/spring-webmvc-4.0.7.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.springframework/springloaded/jars/springloaded-1.2.1.RELEASE.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.xhtmlrenderer/core-renderer/jars/core-renderer-R8.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/org.yaml/snakeyaml/jars/snakeyaml-1.8.jar"/>
+    <pathelement location="C:/Grails/grails-2.4.4/lib/xalan/serializer/jars/serializer-2.7.1.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/ant-1.9.3.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/ant-antlr-1.9.3.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/ant-junit-1.9.3.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/ant-launcher-1.9.3.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/bsf-2.4.0.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/commons-cli-1.2.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/commons-logging-1.1.1.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/gpars-1.2.1.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-ant-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-bsf-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-console-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-docgenerator-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-groovydoc-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-groovysh-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-jmx-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-json-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-jsr223-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-nio-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-servlet-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-sql-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-swing-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-templates-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-test-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-testng-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/groovy-xml-2.3.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/ivy-2.3.0.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/jansi-1.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/jcommander-1.35.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/jline-2.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/jsp-api-2.0.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/jsr166y-1.7.0.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/junit-4.11.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/multiverse-core-0.7.0.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/qdox-1.12.1.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/servlet-api-2.4.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/testng-6.8.8.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/xmlpull-1.1.3.1.jar"/>
+    <pathelement location="C:/Groovy/groovy-2.3.11/lib/xstream-1.4.7.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+    <property name="grooovyc.task.sdk" value="library.grails-2.4.4.classpath"/>
+    <taskdef name="groovyc" classname="org.codehaus.groovy.ant.Groovyc" classpathref="${grooovyc.task.sdk}"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/deloved-app/module_deloved-app-grailsplugins.xml"/>
+  
+  <import file="${basedir}/deloved-core/module_deloved-core.xml"/>
+  
+  <import file="${basedir}/deloved-admin/module_excelimport-inplaceplugin.xml"/>
+  
+  <import file="${basedir}/deloved-admin/module_deloved-admin.xml"/>
+  
+  <import file="${basedir}/deloved-app/module_paymaster-inplaceplugin.xml"/>
+  
+  <import file="${basedir}/deloved-front/module_deloved-front.xml"/>
+  
+  <import file="${basedir}/deloved-app/module_deloved-app.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.deloved-app-grailsplugins, clean.module.deloved-core, clean.module.excelimport-inplaceplugin, clean.module.deloved-admin, clean.module.paymaster-inplaceplugin, clean.module.deloved-front, clean.module.deloved-app, clean.artifact.deloved-admin:grailsweb_exploded, clean.artifact.deloved-app-grailsplugins:grailsweb_exploded, clean.artifact.deloved-app:grailsweb_exploded, clean.artifact.deloved-core:grailsweb_exploded, clean.artifact.deloved-front:grailsweb_exploded, clean.artifact.excelimport-inplaceplugin:grailsweb_exploded, clean.artifact.paymaster-inplaceplugin:grailsweb_exploded" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.deloved-app-grailsplugins, compile.module.deloved-core, compile.module.excelimport-inplaceplugin, compile.module.deloved-admin, compile.module.paymaster-inplaceplugin, compile.module.deloved-front, compile.module.deloved-app" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.deloved-admin:grailsweb_exploded" value="${basedir}/../out/artifacts/deloved_admin_GrailsWeb_exploded"/>
+    <property name="artifact.output.deloved-app-grailsplugins:grailsweb_exploded" value="${basedir}/../out/artifacts/deloved_app_grailsPlugins_GrailsWeb_exploded"/>
+    <property name="artifact.output.deloved-app:grailsweb_exploded" value="${basedir}/../out/artifacts/deloved_app_GrailsWeb_exploded"/>
+    <property name="artifact.output.deloved-core:grailsweb_exploded" value="${basedir}/../out/artifacts/deloved_core_GrailsWeb_exploded"/>
+    <property name="artifact.output.deloved-front:grailsweb_exploded" value="${basedir}/../out/artifacts/deloved_front_GrailsWeb_exploded"/>
+    <property name="artifact.output.excelimport-inplaceplugin:grailsweb_exploded" value="${basedir}/../out/artifacts/excelImport_inplacePlugin_GrailsWeb_exploded"/>
+    <property name="artifact.output.paymaster-inplaceplugin:grailsweb_exploded" value="${basedir}/../out/artifacts/paymaster_inplacePlugin_GrailsWeb_exploded"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="clean.artifact.deloved-admin:grailsweb_exploded" description="clean deloved-admin:GrailsWeb exploded artifact output">
+    <delete dir="${artifact.output.deloved-admin:grailsweb_exploded}"/>
+  </target>
+  
+  <target name="clean.artifact.deloved-app-grailsplugins:grailsweb_exploded" description="clean deloved-app-grailsPlugins:GrailsWeb exploded artifact output">
+    <delete dir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}"/>
+  </target>
+  
+  <target name="clean.artifact.deloved-app:grailsweb_exploded" description="clean deloved-app:GrailsWeb exploded artifact output">
+    <delete dir="${artifact.output.deloved-app:grailsweb_exploded}"/>
+  </target>
+  
+  <target name="clean.artifact.deloved-core:grailsweb_exploded" description="clean deloved-core:GrailsWeb exploded artifact output">
+    <delete dir="${artifact.output.deloved-core:grailsweb_exploded}"/>
+  </target>
+  
+  <target name="clean.artifact.deloved-front:grailsweb_exploded" description="clean deloved-front:GrailsWeb exploded artifact output">
+    <delete dir="${artifact.output.deloved-front:grailsweb_exploded}"/>
+  </target>
+  
+  <target name="clean.artifact.excelimport-inplaceplugin:grailsweb_exploded" description="clean excelImport-inplacePlugin:GrailsWeb exploded artifact output">
+    <delete dir="${artifact.output.excelimport-inplaceplugin:grailsweb_exploded}"/>
+  </target>
+  
+  <target name="clean.artifact.paymaster-inplaceplugin:grailsweb_exploded" description="clean paymaster-inplacePlugin:GrailsWeb exploded artifact output">
+    <delete dir="${artifact.output.paymaster-inplaceplugin:grailsweb_exploded}"/>
+  </target>
+  
+  <target name="artifact.deloved-admin:grailsweb_exploded" depends="init.artifacts, compile.module.deloved-admin, compile.module.excelimport-inplaceplugin, compile.module.deloved-app-grailsplugins, compile.module.deloved-core" description="Build &#39;deloved-admin:GrailsWeb exploded&#39; artifact">
+    <mkdir dir="${artifact.output.deloved-admin:grailsweb_exploded}"/>
+    <copy todir="${artifact.output.deloved-admin:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-admin/web-app"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-admin:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-admin/grails-app/views"/>
+    </copy>
+    <mkdir dir="${artifact.output.deloved-admin:grailsweb_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.deloved-admin:grailsweb_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.deloved-admin:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-admin.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-admin:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${excelimport-inplaceplugin.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-admin:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-app-grailsplugins.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-admin:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-core.output.dir}"/>
+    </copy>
+  </target>
+  
+  <target name="artifact.deloved-app-grailsplugins:grailsweb_exploded" depends="init.artifacts, compile.module.deloved-app-grailsplugins" description="Build &#39;deloved-app-grailsPlugins:GrailsWeb exploded&#39; artifact">
+    <mkdir dir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}"/>
+    <copy todir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-app/target/work/plugins/jquery-1.11.1/web-app"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-app/target/work/plugins/spring-security-core-2.0-RC4/grails-app/views"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-app/target/work/plugins/twitter-bootstrap-3.2.1/web-app"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-app/target/work/plugins/database-migration-1.4.0/grails-app/views"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-app/target/work/plugins/mail-1.0.7/grails-app/views"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-app/target/work/plugins/joda-time-1.5/grails-app/views"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-app/target/work/plugins/excel-export-0.2.1/web-app"/>
+    </copy>
+    <mkdir dir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.deloved-app-grailsplugins:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-app-grailsplugins.output.dir}"/>
+    </copy>
+  </target>
+  
+  <target name="artifact.deloved-app:grailsweb_exploded" depends="init.artifacts, compile.module.deloved-app, compile.module.paymaster-inplaceplugin, compile.module.deloved-core, compile.module.deloved-app-grailsplugins, compile.module.deloved-front, compile.module.deloved-admin, compile.module.excelimport-inplaceplugin" description="Build &#39;deloved-app:GrailsWeb exploded&#39; artifact">
+    <mkdir dir="${artifact.output.deloved-app:grailsweb_exploded}"/>
+    <copy todir="${artifact.output.deloved-app:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-app/web-app"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-app/grails-app/views"/>
+    </copy>
+    <mkdir dir="${artifact.output.deloved-app:grailsweb_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.deloved-app:grailsweb_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.deloved-app:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-app.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${paymaster-inplaceplugin.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-core.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-app-grailsplugins.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-front.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-admin.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-app:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${excelimport-inplaceplugin.output.dir}"/>
+    </copy>
+  </target>
+  
+  <target name="artifact.deloved-core:grailsweb_exploded" depends="init.artifacts, compile.module.deloved-core, compile.module.deloved-app-grailsplugins" description="Build &#39;deloved-core:GrailsWeb exploded&#39; artifact">
+    <mkdir dir="${artifact.output.deloved-core:grailsweb_exploded}"/>
+    <copy todir="${artifact.output.deloved-core:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-core/web-app"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-core:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-core/grails-app/views"/>
+    </copy>
+    <mkdir dir="${artifact.output.deloved-core:grailsweb_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.deloved-core:grailsweb_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.deloved-core:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-core.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-core:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-app-grailsplugins.output.dir}"/>
+    </copy>
+  </target>
+  
+  <target name="artifact.deloved-front:grailsweb_exploded" depends="init.artifacts, compile.module.deloved-front, compile.module.deloved-app-grailsplugins, compile.module.deloved-admin, compile.module.excelimport-inplaceplugin, compile.module.deloved-core" description="Build &#39;deloved-front:GrailsWeb exploded&#39; artifact">
+    <mkdir dir="${artifact.output.deloved-front:grailsweb_exploded}"/>
+    <copy todir="${artifact.output.deloved-front:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-front/web-app"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-front:grailsweb_exploded}">
+      <fileset dir="${basedir}/deloved-front/grails-app/views"/>
+    </copy>
+    <mkdir dir="${artifact.output.deloved-front:grailsweb_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.deloved-front:grailsweb_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.deloved-front:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-front.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-front:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-app-grailsplugins.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-front:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-admin.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-front:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${excelimport-inplaceplugin.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.deloved-front:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-core.output.dir}"/>
+    </copy>
+  </target>
+  
+  <target name="artifact.excelimport-inplaceplugin:grailsweb_exploded" depends="init.artifacts, compile.module.excelimport-inplaceplugin, compile.module.deloved-app-grailsplugins" description="Build &#39;excelImport-inplacePlugin:GrailsWeb exploded&#39; artifact">
+    <mkdir dir="${artifact.output.excelimport-inplaceplugin:grailsweb_exploded}"/>
+    <copy todir="${artifact.output.excelimport-inplaceplugin:grailsweb_exploded}">
+      <fileset dir="${basedir}/excel-import/web-app"/>
+    </copy>
+    <mkdir dir="${artifact.output.excelimport-inplaceplugin:grailsweb_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.excelimport-inplaceplugin:grailsweb_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.excelimport-inplaceplugin:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${excelimport-inplaceplugin.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.excelimport-inplaceplugin:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-app-grailsplugins.output.dir}"/>
+    </copy>
+  </target>
+  
+  <target name="artifact.paymaster-inplaceplugin:grailsweb_exploded" depends="init.artifacts, compile.module.paymaster-inplaceplugin, compile.module.deloved-app-grailsplugins, compile.module.deloved-core" description="Build &#39;paymaster-inplacePlugin:GrailsWeb exploded&#39; artifact">
+    <mkdir dir="${artifact.output.paymaster-inplaceplugin:grailsweb_exploded}"/>
+    <copy todir="${artifact.output.paymaster-inplaceplugin:grailsweb_exploded}">
+      <fileset dir="${basedir}/paymaster/web-app"/>
+    </copy>
+    <copy todir="${artifact.output.paymaster-inplaceplugin:grailsweb_exploded}">
+      <fileset dir="${basedir}/paymaster/grails-app/views"/>
+    </copy>
+    <mkdir dir="${artifact.output.paymaster-inplaceplugin:grailsweb_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.paymaster-inplaceplugin:grailsweb_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.paymaster-inplaceplugin:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${paymaster-inplaceplugin.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.paymaster-inplaceplugin:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-app-grailsplugins.output.dir}"/>
+    </copy>
+    <copy todir="${artifact.output.paymaster-inplaceplugin:grailsweb_exploded}/WEB-INF/classes">
+      <fileset dir="${deloved-core.output.dir}"/>
+    </copy>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.deloved-admin:grailsweb_exploded, artifact.deloved-app-grailsplugins:grailsweb_exploded, artifact.deloved-app:grailsweb_exploded, artifact.deloved-core:grailsweb_exploded, artifact.deloved-front:grailsweb_exploded, artifact.excelimport-inplaceplugin:grailsweb_exploded, artifact.paymaster-inplaceplugin:grailsweb_exploded" description="Build all artifacts">
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

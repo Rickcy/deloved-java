@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="deloved-app dev" uuid="33227e2a-dfb6-4fda-9ef6-e31c55b39737">
+      <user-name>postgres</user-name>
+      <user-password>dfdadfc5dfd9dfdedfcddfd8dfcfdfd9</user-password>
+      <schema-pattern>deloved-app.pg_catalog deloved-app.public</schema-pattern>
+      <default-schemas>deloved-app.public</default-schemas>
+    </data-source>
+  </component>
+</project>

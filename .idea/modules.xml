@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/deloved-admin/deloved-admin.iml" filepath="$PROJECT_DIR$/deloved-admin/deloved-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/deloved-app/deloved-app.iml" filepath="$PROJECT_DIR$/deloved-app/deloved-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/deloved-app/deloved-app-grailsPlugins.iml" filepath="$PROJECT_DIR$/deloved-app/deloved-app-grailsPlugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/deloved-core/deloved-core.iml" filepath="$PROJECT_DIR$/deloved-core/deloved-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/deloved-front/deloved-front.iml" filepath="$PROJECT_DIR$/deloved-front/deloved-front.iml" />
+      <module fileurl="file://$PROJECT_DIR$/deloved-admin/excelImport-inplacePlugin.iml" filepath="$PROJECT_DIR$/deloved-admin/excelImport-inplacePlugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/deloved-app/paymaster-inplacePlugin.iml" filepath="$PROJECT_DIR$/deloved-app/paymaster-inplacePlugin.iml" />
+    </modules>
+  </component>
+</project>

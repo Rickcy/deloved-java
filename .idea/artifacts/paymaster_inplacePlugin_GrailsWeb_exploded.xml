@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="paymaster-inplacePlugin:GrailsWeb exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/paymaster_inplacePlugin_GrailsWeb_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="paymaster-inplacePlugin/web/GrailsWeb" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="paymaster-inplacePlugin" />
+          <element id="module-output" name="deloved-core" />
+          <element id="module-output" name="deloved-app" />
+          <element id="module-output" name="deloved-admin" />
+          <element id="module-output" name="deloved-front" />
+          <element id="module-output" name="excelImport-inplacePlugin" />
+          <element id="module-output" name="deloved-app-grailsPlugins" />
+          <element id="dir-copy" path="C:/angularjs" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
