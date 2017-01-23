@@ -11,10 +11,10 @@
 	<meta name="layout" content="front">
 	<title>
 
-		${itemInstance.name}
+		Купить ${itemInstance.name} | ${itemInstance.account.city.name} от производителя ${itemInstance.account.name}
 
 	</title>
-	<meta name="keywords" content="${itemInstance?.kind}">
+	<meta name="keywords" content="${itemInstance?.kind} ${itemInstance.account.name}">
 	<meta name="description" content="${itemInstance?.description}">
 	<style>
 	.bx-wrapper .bx-viewport{

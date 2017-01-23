@@ -23,7 +23,7 @@
 		<div class="value-col ft">
 			<p id="id" name="id">${profileInstance.id}</p>
 		</div>
-		<sec:ifAnyGranted roles="ROLE_ACCOUNT,ROLE_ADMIN">
+		<sec:ifAnyGranted roles="ROLE_ACCOUNT,ROLE_ADMIN,ROLE_MANAGER,ROLE_JURIST,ROLE_JUDGE,ROLE_MEDIATOR">
 		<div class="action-col-password ft">
 			<g:link controller="profile" action="passwd"><g:message code="profile.button.passwd.label"/></g:link>
 		</div>

@@ -48,7 +48,7 @@ invokeTag('message','g',28,['code':("profile.button.passwd.label")],-1)
 invokeTag('link','g',28,['controller':("profile"),'action':("passwd")],3)
 printHtmlPart(10)
 })
-invokeTag('ifAnyGranted','sec',30,['roles':("ROLE_ACCOUNT,ROLE_ADMIN")],2)
+invokeTag('ifAnyGranted','sec',30,['roles':("ROLE_ACCOUNT,ROLE_ADMIN,ROLE_MANAGER,ROLE_JURIST,ROLE_JUDGE,ROLE_MEDIATOR")],2)
 printHtmlPart(11)
 expressionOut.print(profileInstance.fio)
 printHtmlPart(12)
@@ -155,7 +155,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1473053217131L
+public static final long LAST_MODIFIED = 1485148897244L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
