@@ -1,1 +1,0 @@
-<g:staticContent code="promo"/>
